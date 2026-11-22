@@ -1,0 +1,21 @@
+mobilenet_v3_large_noaug_freeze (caso 2)
+melhor F1 validação: 0.984
+
+              precision    recall  f1-score   support
+
+  background       1.00      0.85      0.92        13
+  biological       0.99      1.00      1.00       599
+       metal       0.98      0.96      0.97       272
+       paper       0.95      0.99      0.97       148
+     plastic       0.96      0.95      0.96       225
+
+    accuracy                           0.98      1257
+   macro avg       0.98      0.95      0.96      1257
+weighted avg       0.98      0.98      0.98      1257
+
+['background', 'biological', 'metal', 'paper', 'plastic']
+[[ 11   0   0   0   2]
+ [  0 599   0   0   0]
+ [  0   3 261   2   6]
+ [  0   0   1 147   0]
+ [  0   1   5   5 214]]
