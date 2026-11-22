@@ -1,0 +1,22 @@
+# Ambiente do projeto - mesmas versões para todo o grupo.
+#
+# Instalação (Windows, com GPU NVIDIA), dentro do repositório:
+#   python -m venv .venv
+#   .venv\Scripts\activate
+#
+#   1) PyTorch com CUDA (no Windows, o pip padrão instala só a versão CPU).
+#      Em https://pytorch.org/get-started/locally/ escolha Windows + Pip + a versão
+#      de CUDA disponível e use o --index-url que o site mostrar, com as versões abaixo:
+#        pip install torch==2.15.0 torchvision==0.29.2 --index-url https://download.pytorch.org/whl/<cuXXX>
+#
+#   2) O resto:
+#        pip install -r requirements.txt
+#
+#   3) Conferir a GPU (deve imprimir True):
+#        python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+
+torch==2.15.0
+torchvision==0.29.2
+pillow==12.3.0
+numpy==2.5.3
+scikit-learn==1.9.1
