@@ -1,0 +1,19 @@
+\section{Resultados}
+
+O F1 macro de teste atribui o mesmo peso a cada uma das cinco classes. Em cada treino, a época avaliada no teste foi selecionada pelo maior F1 macro de validação.
+
+Das 22 configurações previstas, 20 aguardam entrega de métricas.
+
+A ResNet-18 com inicialização aleatória obteve F1 macro de 0,608 com aumento de dados e de 0,717 sem aumento.
+
+O maior valor ocorreu no caso nenhum, com diferença de 0,109 entre as configurações.
+
+\input{artigo/gabriel/gerado/tabela.tex}
+
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{artigo/gabriel/gerado/f1_por_rede.pdf}\caption{F1 macro no teste por rede e configuração.}\end{figure}
+
+\section{Conclusão}
+
+A comparação global depende da consolidação dos resultados pendentes.
+
+A comparação de inicializações também incorpora as taxas de aprendizado da base previstas em cada protocolo. A avaliação usa uma divisão única e uma semente por configuração. Na divisão local, 238 conteúdos de fotos originais, identificados por SHA-256, ocorrem tanto no treino quanto no teste. Entre as 1.257 entradas finais de teste, 19 são idênticas, byte a byte, a entradas de treino. Essa sobreposição e a proximidade entre capturas limitam a interpretação dos escores como estimativas para imagens inéditas.

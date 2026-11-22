@@ -1,0 +1,20 @@
+Ambiente de Gabriel
+Arch Linux x86_64, Python 3.14.10, Radeon RX 6750 XT de 12 GB.
+O Python usado pelo grupo nos testes iniciais foi o 3.13. As cinco versões de biblioteca seguem requirements.txt. O índice abaixo fornece as variantes ROCm de torch e torchvision.
+
+Comandos a partir da raiz para reproduzir o ambiente local
+python -m venv venv
+venv/bin/pip install torch==2.15.0+rocm7.14 torchvision==0.29.2+rocm7.14 --extra-index-url https://download.pytorch.org/whl/rocm7.14
+venv/bin/pip install -r requirements.txt
+venv/bin/pip install matplotlib
+
+O wheel testado contém kernels para gfx1030 e a placa se identifica como gfx1031. O teste nativo retornou hipErrorInvalidImage. Nesta máquina, o comando abaixo passou no teste de forward, backward e Adam com a compatibilidade gfx1030 aplicada ao processo. O PyTorch apresenta a GPU ROCm como device: cuda.
+
+HSA_OVERRIDE_GFX_VERSION=10.3.0 OMP_NUM_THREADS=2 venv/bin/python -u 03_train_scratch.py
+
+Usar a divisão comum do grupo. Os números e a assinatura dos caminhos da divisão local estão em divisao.txt. Cada execução do script de treino acrescenta duas linhas em runs/resultados.csv e grava checkpoints nos diretórios dos experimentos.
+
+Consolidação e montagem do artigo
+Colocar os CSVs em runs/resultados_<nome>.csv, com os nomes em minúsculas (ximenes, caio, matheus, ito, rafa e gabriel). Manter os relatórios de teste em runs/<experimento>/resultado_teste.txt.
+Executar venv/bin/python 04_consolidar.py a partir da raiz. A tabela inclui os 22 casos e identifica os pendentes. A matriz de Gabriel usa o maior F1 macro de teste dos seus dois casos. A matriz geral é emitida após receber as 22 métricas. Em caso de empate à precisão do CSV, o texto lista os empatados e a matriz ilustra o primeiro na ordem da tabela.
+Para o template IEEE, carregar graphicx, incorporar referencia.tex na seção de modelos, juntar gabriel.bib à bibliografia e incluir artigo/gabriel/gerado/resultados_conclusao.tex. Os caminhos de inclusão são relativos à raiz.
