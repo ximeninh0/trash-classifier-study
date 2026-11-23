@@ -1,0 +1,14 @@
+Por que usar a ResNet-18 do zero?
+Ela mantém a arquitetura da ResNet-18 do Ximenes. Pareamos os casos com e sem augmentation. O protocolo também muda a taxa de aprendizado da base (10⁻³ do zero e 10⁻⁴ com pré-treino), o que limita a atribuição da diferença exclusivamente à inicialização.
+
+O que chega à rede?
+No caso 1, há recorte aleatório redimensionado para 224 × 224, espelhamentos, rotação e alterações de cor a cada passagem. No caso nenhum, na validação e no teste, há redimensionamento para 224 × 224. Todos recebem a normalização do ImageNet. A cabeça produz cinco logits.
+
+Como os pesos mudam?
+A entropia cruzada recebe os logits e pondera as classes pelo inverso da frequência no treino. A cada lote de até 32 imagens, zeramos os gradientes, calculamos a perda, executamos backward e aplicamos Adam. No scratch, todos os pesos recebem gradientes. Nos casos congelados dos colegas, só a cabeça treina e a BatchNorm da base mantém suas estatísticas.
+
+Por que três conjuntos?
+O treino atualiza pesos. A validação escolhe a época por F1 macro entre 15 épocas. O teste avalia o checkpoint escolhido. A acurácia conta acertos por imagem. O F1 macro dá o mesmo peso ao F1 de cada classe. Na matriz de confusão, cada linha mostra para onde foram as imagens de uma classe real.
+
+Por que agrupar recortes?
+Recortes da mesma foto podem compartilhar pixels e fundo. No split local, cada origem identificada pelo par pasta/nome aparece em um único conjunto. Uma conferência SHA-256 dos JPGs originais identificou 238 conteúdos distintos presentes tanto no treino quanto no teste. A divisão tampouco separa sessões de captura. Isso limita a extrapolação para novas fotos e sessões.
