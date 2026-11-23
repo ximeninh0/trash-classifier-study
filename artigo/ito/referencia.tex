@@ -1,0 +1,22 @@
+% Inserir em Sobre o modelo de referência. A chave bibliográfica está em ito.bib.
+% Números de arquitetura: metadados do torchvision 0.29.2.
+\subsection{MobileNetV3-Large}
+
+A MobileNetV3~\cite{howard2019mobilenetv3} é uma rede feita para rodar em
+celulares e sistemas embarcados, onde o custo de processamento importa tanto
+quanto a acurácia. Ela reaproveita as convoluções separáveis em profundidade
+(\textit{depthwise separable}) da MobileNetV1 e os blocos residuais invertidos
+da MobileNetV2. A isso foram somados módulos \textit{squeeze-and-excitation} e
+a ativação \textit{hard-swish}, uma versão mais barata de calcular da
+\textit{swish}. A ordem e o tamanho dos blocos foram definidos por busca
+automática de arquitetura (NAS), e não à mão.
+
+Usamos a versão \textit{Large} do Torchvision com os pesos
+\texttt{IMAGENET1K\_V2}, que chega a 75,3\% de acurácia top-1 no ImageNet com
+0,22~GFLOPs por imagem, o menor custo entre as cinco redes do trabalho. A
+cabeça original termina numa camada linear de 1280 para 1000 classes
+(\texttt{classifier[3]}), que trocamos por uma de 1280 para 5.
+
+Com a troca, o modelo fica com 4.208.437 parâmetros. Com a base congelada, só
+os 6.405 parâmetros da cabeça são treinados (0,15\% do total). Por ser leve, é
+a rede mais indicada para rodar na câmera do projeto SALUS.

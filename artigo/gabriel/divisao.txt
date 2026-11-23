@@ -1,0 +1,15 @@
+Contagem do split local gerado pelos scripts oficiais
+
+classe treino validação teste
+background 56 12 13
+biological 3237 569 599
+metal 1245 272 272
+paper 688 146 148
+plastic 1038 210 225
+
+SHA-256 da lista ordenada de caminhos relativos a split/, um por linha (UTF-8, LF)
+66b5fda0df7c78247d6fc39a332487e04e72700ef01ad8e08dc3ea48da17d13d
+
+Pares pasta/nome presentes em mais de um conjunto: 0.
+Conteúdos distintos de JPG original (SHA-256) presentes em treino e teste: 238.
+Imagens finais de teste com o mesmo SHA-256 de uma imagem final de treino: 19 de 1.257.

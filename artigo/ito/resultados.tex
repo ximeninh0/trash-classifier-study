@@ -1,0 +1,22 @@
+% Inserir em Resultados, depois da tabela geral.
+% Números: runs/resultados_ito.csv e runs/mobilenet_v3_large_*/resultado_teste.txt.
+\subsubsection{MobileNetV3-Large}
+
+Os quatro casos ficaram com F1 macro no teste entre 0,948 e 0,967. O melhor
+foi o caso~1 (\textit{augmentation} sem congelar a base), com 0,967, mas os
+casos nenhum (0,966) e~2 (0,963) ficaram praticamente empatados. O caso~2
+chama atenção: treinando só a cabeça, ou seja, 0,15\% dos parâmetros, a rede
+chegou quase no mesmo nível do \textit{fine-tuning} completo. Isso mostra que
+as características aprendidas no ImageNet já servem bem para separar os
+resíduos.
+
+O \textit{augmentation} não ajudou sem congelamento (0,967 contra 0,966) e
+piorou o caso congelado (0,948 contra 0,963), possivelmente porque uma única
+camada linear não consegue se adaptar às imagens transformadas. Vale lembrar
+que essas diferenças são pequenas: o teste tem só 13 imagens de
+\textit{background}, então um erro a mais nessa classe já muda o F1 macro em
+cerca de 0,01.
+
+O erro mais comum em todos os casos foi confundir metal com plástico. No
+melhor caso, 8 metais foram classificados como plástico e 4 plásticos como
+metal.
