@@ -1,0 +1,21 @@
+resnet18_aug_freeze (caso 1+2)
+melhor F1 validação: 0.894
+
+              precision    recall  f1-score   support
+
+  background       0.93      1.00      0.96        13
+  biological       1.00      0.98      0.99       599
+       metal       0.85      0.95      0.90       272
+       paper       0.95      0.90      0.92       148
+     plastic       0.91      0.85      0.88       225
+
+    accuracy                           0.94      1257
+   macro avg       0.93      0.94      0.93      1257
+weighted avg       0.94      0.94      0.94      1257
+
+['background', 'biological', 'metal', 'paper', 'plastic']
+[[ 13   0   0   0   0]
+ [  0 585  11   1   2]
+ [  0   1 259   1  11]
+ [  1   1   6 133   7]
+ [  0   0  29   5 191]]
