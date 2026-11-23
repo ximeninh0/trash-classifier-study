@@ -1,0 +1,5 @@
+experimento,backbone,caso,pretreinado,augment,freeze,params_treinaveis,tempo_s,val_f1,test_acc,test_f1
+resnet50_aug_freeze,resnet50,1+2,True,True,True,10245,1170,0.979,0.970,0.960
+resnet50_aug_nofreeze,resnet50,1,True,True,False,23518277,1695,0.982,0.973,0.960
+resnet50_noaug_freeze,resnet50,2,True,False,True,10245,1451,0.987,0.975,0.958
+resnet50_noaug_nofreeze,resnet50,nenhum,True,False,False,23518277,1533,0.979,0.980,0.974
