@@ -1,0 +1,23 @@
+rede,caso,situacao,experimento,backbone,pretreinado,augment,freeze,params_treinaveis,tempo_s,val_f1,test_acc,test_f1
+ResNet-18,1+2,pendente,,,,,,,,,,
+ResNet-18,1,pendente,,,,,,,,,,
+ResNet-18,2,pendente,,,,,,,,,,
+ResNet-18,nenhum,pendente,,,,,,,,,,
+ResNet-50,1+2,pendente,,,,,,,,,,
+ResNet-50,1,pendente,,,,,,,,,,
+ResNet-50,2,pendente,,,,,,,,,,
+ResNet-50,nenhum,pendente,,,,,,,,,,
+EfficientNet-B0,1+2,pendente,,,,,,,,,,
+EfficientNet-B0,1,pendente,,,,,,,,,,
+EfficientNet-B0,2,pendente,,,,,,,,,,
+EfficientNet-B0,nenhum,pendente,,,,,,,,,,
+MobileNetV3-Large,1+2,pendente,,,,,,,,,,
+MobileNetV3-Large,1,pendente,,,,,,,,,,
+MobileNetV3-Large,2,pendente,,,,,,,,,,
+MobileNetV3-Large,nenhum,pendente,,,,,,,,,,
+ConvNeXt-Tiny,1+2,pendente,,,,,,,,,,
+ConvNeXt-Tiny,1,pendente,,,,,,,,,,
+ConvNeXt-Tiny,2,pendente,,,,,,,,,,
+ConvNeXt-Tiny,nenhum,pendente,,,,,,,,,,
+ResNet-18 do zero,1,recebido,resnet18_aug_nofreeze_scratch,resnet18,False,True,False,11179077,487,0.667,0.705,0.608
+ResNet-18 do zero,nenhum,recebido,resnet18_noaug_nofreeze_scratch,resnet18,False,False,False,11179077,379,0.772,0.817,0.717

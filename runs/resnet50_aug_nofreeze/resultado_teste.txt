@@ -1,0 +1,21 @@
+resnet50_aug_nofreeze (caso 1)
+melhor F1 validação: 0.982
+
+              precision    recall  f1-score   support
+
+  background       0.92      0.92      0.92        13
+  biological       0.99      0.98      0.99       599
+       metal       0.94      0.95      0.95       272
+       paper       0.97      0.99      0.98       148
+     plastic       0.96      0.97      0.96       225
+
+    accuracy                           0.97      1257
+   macro avg       0.96      0.96      0.96      1257
+weighted avg       0.97      0.97      0.97      1257
+
+['background', 'biological', 'metal', 'paper', 'plastic']
+[[ 12   0   0   0   1]
+ [  0 588  11   0   0]
+ [  0   3 259   2   8]
+ [  1   0   1 146   0]
+ [  0   0   5   2 218]]
