@@ -1,0 +1,21 @@
+efficientnet_b0_noaug_nofreeze (caso nenhum)
+melhor F1 validação: 0.992
+
+              precision    recall  f1-score   support
+
+  background       1.00      1.00      1.00        13
+  biological       0.99      1.00      0.99       599
+       metal       0.98      0.96      0.97       272
+       paper       0.97      0.98      0.98       148
+     plastic       0.98      0.97      0.97       225
+
+    accuracy                           0.98      1257
+   macro avg       0.98      0.98      0.98      1257
+weighted avg       0.98      0.98      0.98      1257
+
+['background', 'biological', 'metal', 'paper', 'plastic']
+[[ 13   0   0   0   0]
+ [  0 598   0   0   1]
+ [  0   6 262   0   4]
+ [  0   0   3 145   0]
+ [  0   1   2   4 218]]
