@@ -2,3 +2,4 @@ raw_dataset
 grouped
 split
 venv
+runs/*/best.pt

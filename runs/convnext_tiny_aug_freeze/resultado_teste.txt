@@ -1,0 +1,21 @@
+convnext_tiny_aug_freeze (caso 1+2)
+melhor F1 validação: 0.968
+
+              precision    recall  f1-score   support
+
+  background       1.00      0.92      0.96        13
+  biological       0.99      0.99      0.99       599
+       metal       0.96      0.97      0.96       272
+       paper       0.93      0.99      0.96       148
+     plastic       0.96      0.92      0.94       225
+
+    accuracy                           0.97      1257
+   macro avg       0.97      0.96      0.96      1257
+weighted avg       0.97      0.97      0.97      1257
+
+['background', 'biological', 'metal', 'paper', 'plastic']
+[[ 12   0   0   0   1]
+ [  0 595   1   2   1]
+ [  0   2 263   1   6]
+ [  0   0   1 146   1]
+ [  0   1   9   8 207]]
