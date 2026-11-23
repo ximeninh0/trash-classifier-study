@@ -1,0 +1,5 @@
+A EfficientNet-B0 teve seu melhor resultado no teste com ajuste de todos os pesos e sem \textit{data augmentation} (caso \texttt{nenhum}).
+Nessa configuração, o F1 macro e a acurácia foram de \(0{,}983\).
+Com \textit{data augmentation} e a base congelada (caso \texttt{1+2}), o F1 macro foi de \(0{,}949\).
+Os casos com apenas \textit{data augmentation} (\texttt{1}) e com apenas congelamento da base (\texttt{2}) tiveram F1 macro de \(0{,}969\), considerando as três casas decimais registradas.
+O ajuste de todos os pesos produziu um F1 macro maior do que o treino com a base congelada, tanto com quanto sem \textit{data augmentation}.
