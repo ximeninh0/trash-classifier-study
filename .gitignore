@@ -4,4 +4,3 @@ split
 venv
 runs/**/best.pt
 __pycache__/
-runs
