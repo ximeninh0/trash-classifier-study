@@ -1,0 +1,5 @@
+experimento,backbone,caso,pretreinado,augment,freeze,params_treinaveis,tempo_s,val_f1,test_acc,test_f1
+convnext_tiny_aug_freeze,convnext_tiny,1+2,True,True,True,3845,752,0.968,0.973,0.963
+convnext_tiny_aug_nofreeze,convnext_tiny,1,True,True,False,27823973,1684,0.990,0.984,0.968
+convnext_tiny_noaug_freeze,convnext_tiny,2,True,False,True,3845,494,0.975,0.985,0.977
+convnext_tiny_noaug_nofreeze,convnext_tiny,nenhum,True,False,False,27823973,1451,0.994,0.990,0.983
